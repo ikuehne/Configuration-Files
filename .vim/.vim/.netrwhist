@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/ikuehne/Google Drive/bogoscheme/lexer_results'
+let g:netrw_dirhist_2='/Users/ikuehne/.vim/ftplugin'
+let g:netrw_dirhist_3='/Users/ikuehne/test/docs/Classes'
+let g:netrw_dirhist_4='/Users/ikuehne/test/docs'
+let g:netrw_dirhist_5='/Users/ikuehne/test/docs/Classes'
