@@ -15,7 +15,7 @@ Plugin 'wlangstroth/vim-racket'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-" Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -29,8 +29,10 @@ Plugin 'wlangstroth/vim-racket'
 " Plugin 'user/L9', {'name': 'newL9'}
 
 Bundle 'gmarik/vundle'
-Bundle 'Valloric/YouCompleteMe'
 Bundle 'raichoo/haskell-vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'keith/swift.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -53,11 +55,32 @@ filetype indent plugin on
 set scrolloff=10
 
 " Change youcompleteme background
-highlight Pmenu ctermfg=2 ctermbg=3 guifg=#4D4D4D guibg=#0000ff
+"highlight Pmenu ctermfg=2 ctermbg=3 guifg=#4D4D4D guibg=#0000ff
 
 " For OCaml
 au BufRead,BufNewFile *.ml,*.mli compiler ocaml
 syntax on
 
+" Keymap for appending to a word.
+nnoremap ee ea
+
+" Keymap for reformatting a paragraph.
+nnoremap \f gwip
+
 " Let backspace cover things.
 set backspace=indent,eol,start
+
+" Stop YCM from messing with Syntastic
+let g:ycm_register_as_syntastic_checker = 0
+
+" Let Syntastic use OCamlc
+let g:syntastic_ocaml_use_ocamlc = 1
+let g:syntastic_ocaml_use_janestreet_core = 1
+let g:syntastic_ocaml_janestreet_core_dir = "/Users/ikuehne/.opam/system/lib/core"
+
+" Stop slow Syntastic checks
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['python'] }
+
+if filereadable("./.dirconfig")
+    source ./.dirconfig
+endif
