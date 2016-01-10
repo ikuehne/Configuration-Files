@@ -33,6 +33,8 @@ if [ "$1" = "-filetype" ] || [ "$2" = "-filetype" ]; then
 	echo "Linking filetype files..."
 	ln -s ${dir}/ftplugin ~/.vim/ftplugin
 	ln -s ${dir}/filetype.vim ~/.vim/filetype.vim
+	ln -s ${dir}/.ycm_extra_conf_c.py ~/.ycm_extra_conf_c.py
+	ln -s ${dir}/.ycm_extra_conf_c++.py ~/.ycm_extra_conf_c++.py
 fi
 
 # Try to install some required packages on Ubuntu.
