@@ -11,20 +11,29 @@
 # command-line arguments to specify further actions: -zsh, to link .zshrc, and
 # -filetype, to install filetype configuration.
 
+dir=`pwd`
+echo "Current directory: "
+echo ${dir}
+
 if [ "$1" = "-zsh" ] || [ "$2" = "-zsh" ]; then
-	ln -s .zshrc ~/.zshrc
+	echo "Linking .zshrc..."
+	ln -s ${dir}/.zshrc ~/.zshrc
 fi
 
-ln -s _vimrc ~/_vimrc
+echo "Linking _vimrc..."
+ln -s ${dir}/_vimrc ~/_vimrc
 mkdir ~/.vim || true
 
 if [ "$1" = "-filetype" ] || [ "$2" = "-filetype" ]; then
-	ln -s ftplugin ~/.vim/ftplugin
-	ln -s filetype.vim ~./vim/filetype.vim
+	echo "Linking filetype files..."
+	ln -s ${dir}/ftplugin ~/.vim/ftplugin
+	ln -s ${dir}/filetype.vim ~/.vim/filetype.vim
 fi
 
+echo "Installing Vundle..."
 mkdir ~/.vim/bundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+echo "Installing plugins..."
 vim +PluginInstall +qall
 cd ~/.vim/bundle/YouCompleteMe
 ./install.py --clang-completer
