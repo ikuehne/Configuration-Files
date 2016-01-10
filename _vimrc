@@ -8,7 +8,7 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'wlangstroth/vim-racket'
 
@@ -72,11 +72,12 @@ set backspace=indent,eol,start
 
 " Stop YCM from messing with Syntastic
 let g:ycm_register_as_syntastic_checker = 0
+let g:ycm_confirm_extra_conf = 0
 
 " Let Syntastic use OCamlc
 let g:syntastic_ocaml_use_ocamlc = 1
 let g:syntastic_ocaml_use_janestreet_core = 1
-let g:syntastic_ocaml_janestreet_core_dir = "/Users/ikuehne/.opam/system/lib/core"
+let g:syntastic_ocaml_janestreet_core_dir = "/home/ikuehne/.opam/system/lib/core"
 
 " Stop slow Syntastic checks
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['python'] }

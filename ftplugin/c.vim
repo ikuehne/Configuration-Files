@@ -11,3 +11,4 @@ highlight ColorColumn
 inoremap { {<CR>}<Esc>ko
 nnoremap \c :make clean<Enter>
 nnoremap \m :make<Enter>
+let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf_c.py"
