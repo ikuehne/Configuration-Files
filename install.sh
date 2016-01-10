@@ -16,6 +16,11 @@ echo "Current directory: "
 echo ${dir}
 
 if [ "$1" = "-zsh" ] || [ "$2" = "-zsh" ]; then
+	# Try to install zsh on Ubuntu.
+	sudo apt-get install zsh || true 2>/dev/null
+
+	# Ditto with Arch.
+	sudo pacman -S zsh || true 2>/dev/null
 	echo "Linking .zshrc..."
 	ln -s ${dir}/.zshrc ~/.zshrc
 fi
@@ -29,6 +34,12 @@ if [ "$1" = "-filetype" ] || [ "$2" = "-filetype" ]; then
 	ln -s ${dir}/ftplugin ~/.vim/ftplugin
 	ln -s ${dir}/filetype.vim ~/.vim/filetype.vim
 fi
+
+# Try to install some required packages on Ubuntu.
+sudo apt-get install git build-essential cmake python-dev clang || true 2>/dev/null
+
+# Ditto with Arch.
+sudo pacman -S vim git base-devel cmake clang || true 2>/dev/null
 
 echo "Installing Vundle..."
 mkdir ~/.vim/bundle
