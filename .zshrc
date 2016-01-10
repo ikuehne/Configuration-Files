@@ -2,13 +2,17 @@
 . /home/ikuehne/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 eval `opam config env`
 
-# Get brew things to override XCode.
-export PATH=/usr/local/sbin:/usr/local/bin:$PATH
-
-# Allow Swift tools.
-export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:"${PATH}"
-# Get ds9 to be more pretty.
-alias ds9 "ds9 -zscale"
+# OSX configuration.
+if [ `uname` = "Darwin" ]; then
+	# Get brew things to override XCode.
+	export PATH=/usr/local/sbin:/usr/local/bin:$PATH
+	# Allow Swift tools.
+	export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:"${PATH}"
+	# Get ds9 to be more pretty.
+	alias ds9 "ds9 -zscale"
+	alias gcc=/usr/local/bin/gcc-5
+	alias gemacs="/Applications/Emacs.app/Contents/MacOS/Emacs"
+fi
 
 autoload -U colors && colors
 
