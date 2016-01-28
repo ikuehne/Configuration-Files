@@ -14,6 +14,9 @@ if [ `uname` = "Darwin" ]; then
 	alias gemacs="/Applications/Emacs.app/Contents/MacOS/Emacs"
 fi
 
+# The current directory should be in the PATH.
+export PATH=.:$PATH
+
 autoload -U colors && colors
 
 PROMPT="%{$fg_bold[green]%}%n@%m%{$fg_bold[blue]%} %# %{$reset_color%}"
@@ -51,6 +54,7 @@ setopt autocd
 alias zcp='noglob zmv -C'
 alias zln='noglob zmv -L'
 alias zmv='noglob zmv'
+alias cc='gcc -Wall -Wstrict-prototypes -ansi -pedantic'
 
 function chpwd() {
     emulate -L zsh
