@@ -3,10 +3,10 @@ set tabstop=4
 set expandtab
 set shiftwidth=4
 set softtabstop=4
-set colorcolumn=81
+set colorcolumn=79
 set number
 set wrap
-set tw=80
+set tw=78
 highlight ColorColumn
 inoremap { {<CR>}<Esc>ko
 nnoremap \c :make clean<Enter>

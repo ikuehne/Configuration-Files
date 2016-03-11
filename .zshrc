@@ -8,6 +8,9 @@ if [ `uname` = "Darwin" ]; then
 	export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 	# Allow Swift tools.
 	export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:"${PATH}"
+	# Add Haskell stuff.
+	export PATH=/Library/Haskell/bin:"${PATH}"
+	export PATH=~/Library/Haskell/bin:"${PATH}"
 	# Get ds9 to be more pretty.
 	alias ds9 "ds9 -zscale"
 	alias gcc=/usr/local/bin/gcc-5
