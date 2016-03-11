@@ -1,0 +1,100 @@
+:hoogle (a -> b) -> [a] -> [b]
+:hoogle (a -> b) -> [a] -> [b]
+:hoogle '\(a -> b) -> [a] -> [b]\'
+:hoogle '(a -> b) -> [a] -> [b]'
+:hoogle '('a -> 'b) -> ['a] -> ['b]'
+:hoogle "('a -> 'b) -> ['a] -> ['b]"
+:hoogle ('a -> 'b) -> ['a] -> ['b]
+:hoogle
+:hoogle ('a -> 'b) -> ['a] -> ['b]
+hoogle "('a -> 'b) -> ['a] -> ['b]"
+hoogle ('a -> 'b) -> ['a] -> ['b]
+:t \x -> x + 1
+\x -> x + 1
+\x: x + 1
+:set prompt "λ: "
+:set prompt λ: 
+import Text.Parsec
+:t (@@)
+:t (++)
+(++)
+(++);;
+quicksort [1, 2, 3, 4, 5]
+let quicksort [] = []; quicksort xs = (quicksort[x | x <- xs, x <= (xs !! 0)]) ++ (quicksort [x | x <- xs, x > (xs !! 0)])
+let quicksort xs = [x | x <- xs, x <= (xs !! 4)] ++ [x | x <- xs, x > (xs !! 4)]
+r 10
+let r = (>>= return)
+:t return
+:t id
+let id x = return >>= x
+:t id
+let id = (>>=) . return
+:t (>>=)
+let id = (>>=) . id
+:t id
+let id = return . (>>=)
+r getChar
+r [1]
+:t r
+let r = (>>= return)
+:t (>>=)
+:browse Prelude
+:browse Eq
+:h
+:t Eq
+EQ
+Eq
+:t (==)
+x == Nil
+x
+let x = Cons 10 (Cons 20 (Cons 30 Nil))
+data List a = Nil | Cons {contents :: a, next :: List a} deriving Show
+data List a = Nil | Cons {contents: a, next: List a} deriving Show
+x
+let x = Cons 10 (Cons 20 (Cons 30 Nil))
+let x = Cons 10 (Cons 20 (Cons 30))
+data List a = Nil | Cons {contents :: a, next :: List a}
+data List a = Nil | Cons {contents: a, next: List a}
+let f x -1 = 0; f x y = if x == y then 1 else 2 * (f x (y - 1)) + (f (x - 1) (y - 1))
+let f x -1 = 0; f x y = if x == y then 1 else 2 * (f x (y - 1)) + (f (x - 1) (y - 1))
+x 100000000
+x 10000000
+x 1000000
+x 100000
+x 1000
+let x 0 = 0; x y = x (y - 1)
+ls
+9 % 5
+let (%) = rem
+9 % 5
+10 % 5
+let (%) = mod
+:t (%)
+% = mod
+x + 1
+x
+let x = 10
+ackermann 2.5
+ackermann 4
+ackermann 125
+ackermann 3
+ackermann 0
+ackermann 1
+ackermann 2
+let ackermann x = ack x x where ack 0 y = y + 1; ack x 0 = ack (x - 1) 1; ack x y = ack (x - 1) (ack x (y - 1))
+:q
+1 + 1
+:q
+:Q
+:
+:q
+:Q
+x
+z
+z
+z
+z
+z
+z
+z
+z
